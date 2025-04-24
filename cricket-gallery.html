@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Event Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+
+  <a href="cricket-gallery.html" class="block max-w-sm mx-auto">
+    <div class="">
+      <img
+        src="sport.jpg"
+        alt="Sports Event"
+        class="w-full h-64 object-cover"
+      />
+      <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4 text-white">
+        <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded-full mb-2 inline-block">
+          Sports Event
+        </span>
+        <h3 class="text-white text-lg font-medium">
+          Friendly Cricket Tournament
+        </h3>
+        <p class="text-gray-200 text-sm">
+          Annual sports event bringing communities together.
+        </p>
+        <div class="flex mt-3 gap-2">
+          <button
+            onclick="event.preventDefault();"
+            class="bg-white bg-opacity-20 hover:bg-opacity-30 p-2 rounded-full w-8 h-8 flex items-center justify-center"
+          >
+            <i class="ri-eye-line text-white ri-sm"></i>
+          </button>
+          <button
+            onclick="event.preventDefault();"
+            class="bg-white bg-opacity-20 hover:bg-opacity-30 p-2 rounded-full w-8 h-8 flex items-center justify-center"
+          >
+            <i class="ri-download-line text-white ri-sm"></i>
+          </button>
+          <button
+            onclick="event.preventDefault();"
+            class="bg-white bg-opacity-20 hover:bg-opacity-30 p-2 rounded-full w-8 h-8 flex items-center justify-center"
+          >
+            <i class="ri-share-line text-white ri-sm"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </a>
+
+</body>
+</html>

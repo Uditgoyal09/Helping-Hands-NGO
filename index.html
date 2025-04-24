@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hope Foundation - Make a Difference Today</title>
+    <link rel="icon" href="logo.jpeg" type="image/png" class="rounded-lg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    </script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4F46E5", secondary: "#10B981" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "4px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "4px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .qr-code-container {
+      transition: all 0.3s ease;
+      }
+      .testimonial-slider {
+      transition: transform 0.5s ease;
+      }
+      /* Button styles */
+      button {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      }
+      button:active {
+      transform: scale(0.95);
+      }
+      .ripple {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+      }
+      @keyframes ripple {
+      to {
+      transform: scale(4);
+      opacity: 0;
+      }
+      }
+      /* Active state */
+      button.active {
+      opacity: 0.8;
+      }
+      /* Hover state */
+      button:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.border-animated {
+  border: 2px solid transparent;
+  animation: borderAnimation 3s ease-in-out infinite;
+}
+  .emoji-selected {
+    transform: scale(1.2);
+    border: 2px solid #3b82f6;
+    border-radius: 9999px;
+    padding: 0.25rem;
+
+    .slide-replace {
+      opacity: 0;
+      transform: translateX(100px);
+      transition: all 0.7s ease-in-out;
+    }
+
+    .slide-replace.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    $("#btn1").click(function () {
+      $("#text-container").html(`
+        <div class="slide-replace" id="newText">
+          <h1 class="text-5xl font-extrabold mb-4 mt-10 drop-shadow-lg hover:text-yellow-400">
+           Sabka Sath Sabka Vikas
+          </h1>
+          <h3 class="text-5xl font-extrabold mb-4 mt-10 drop-shadow-lg hover:text-yellow-400">
+           Sabka Vishwas Sabka Pyaar
+          </h3>
+          
+        </div>
+      `);
+    });
+  });
+</script>
+ <header class="fixed w-full bg-gray-900 shadow-sm z-50">
+  <nav class="container mx-auto px-4 sm:px-6 py-4 relative">
+    <div class="flex items-center justify-between flex-wrap">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <a href="#" class="text-2xl font-['Pacifico'] text-primary">
+          <div class="w-20 h-20 mr-3 bg-white rounded-full flex items-center justify-center ">
+          <span class="text-xl font-['Pacifico'] text-primary"><img style="border-radius: 100%; " src="logo.jpeg" alt="logo image"></span>
+        </div>
+        </a>&nbsp;
+        <div class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-orange-500 to-orange-400 p-4">
+          Helping&nbsp;&nbsp;Hands
+        </div>
+      </div>
+     
+      <div class="hidden md:flex items-center font-bold text-xl space-x-4 sm:space-x-8 mt-4 md:mt-0">
+        <a href="#home" class="text-gray-500 hover:text-white hover:underline underline-offset-4">Home</a>
+        <a href="#about" class="text-gray-500 hover:text-white hover:underline underline-offset-4">About Us</a>
+        <a href="#photos" class="text-gray-500 hover:text-white hover:underline underline-offset-4">Gallery</a>
+        <a href="#impact" class="text-gray-500 hover:text-white hover:underline underline-offset-4">Impact Stories</a>
+        <a href="#contact" class="text-gray-500 hover:text-white hover:underline underline-offset-4">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#donate" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Donate</a>
+      </div>
+    
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2 text-white">
+      <a href="#home" class="block text-gray-700 hover:text-primary hover:underline underline-offset-4">Home</a>
+      <a href="#about" class="block text-gray-700 hover:text-primary hover:underline underline-offset-4">About Us</a>
+      <a href="#donate" class="block text-gray-700 hover:text-primary hover:underline underline-offset-4">Donate</a>
+      <a href="#photos" class="block text-gray-700 hover:text-primary hover:underline underline-offset-4">Gallery</a>
+      <a href="#impact" class="block text-gray-700 hover:text-primary hover:underline underline-offset-4">Impact Stories</a>
+      <a href="#contact" class="block text-gray-700 hover:text-primary hover:underline underline-offset-4">Contact</a>
+      <!-- <button type="submit" class="">Donate</button> -->
+      <a href="#donate" class="block bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600 text-white text-center">Donate</a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- MAIN -->
+<main class="pt-8">
+  <section id="home" class="py-16 sm:py-20 bg-gray-50">
+  <section class="relative h-[80vh] sm:h-screen bg-cover bg-center" >
+    <div class="h-[80vh] sm:h-screen bg-cover bg-center overflow-hidden ">
+      <!-- video background -->
+       
+      <video autoplay loop muted class="absolute w-full h-full object-cover z-0">
+        <source src="Blood Donation, American Red Cross _ Stop-motion animation.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
+    <!-- overlay -->
+    <div class="absolute inset-0bg-gradient-to-b from-black/80 to-black/40 z-10"></div>
+    <!-- content -->
+    <div class="relative z-20 text-center px-6 max-w-2xl mx-auto">
+      <div class="max-w-3xl text-center text-white px-8 translate-x-6 transition-transform duration-1000 ease-out animate-fade-in-up">
+        <div id="text-container">
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white drop-shadow-lg hover:text-yellow-400 transition mt-8">
+            Welcome to Hope Foundation
+          </h1>
+          <p class="text-lg sm:text-3xl text-semibold text-red-700 opacity-80 font-light mt-4 mb-6 drop-shadow-lg">
+            Together, we can make a difference in the lives of those in need.
+          </p>
+      </div>
+      <div class="flex justify-center flex-wrap gap-4">
+        <button id="btn1" class="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-all">
+          Learn more
+        </button>
+        <a href="#donate" class="border-2 border-green-700 text-green-700 bg-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 hover:text-white transition-all">
+          Donate Now
+        </a>
+        </div>
+        </div>
+        </div>         
+          <div class="absolute bottom-20 w-full z-30">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              <div class="bg-white/10 backdrop-blur-md sm:p-6 rounded-lg text-yellow-700 shadow-xl">
+                <h3 class="text-lg sm:text-xl font-semibold text-yellow-300 mb-2">Hope Foundation</h3>
+                <p class="text-gray-500 text-sm sm:text-base">
+                  Helping Hands NGO empowers women through education, skill development, and community support.
+                </p>
+              </div>
+              <div class="bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-lg text-yellow-700 shadow-xl">
+                <h3 class="text-lg sm:text-xl font-semibold text-yellow-300 mb-2">Hope Foundation</h3>
+                <p class="text-gray-500 text-sm sm:text-base">
+                  It creates opportunities for self-reliance and financial independence.
+                </p>
+              </div>
+              <div class="bg-white/10 backdrop-blur-md p-4 sm:p-6 rounded-lg text-yellow-700 shadow-xl">
+                <h3 class="text-lg sm:text-xl font-semibold text-yellow-300 mb-2">Hope Foundation</h3>
+                <p class="text-gray-500 text-sm sm:text-base">
+                  The NGO is committed to building a more inclusive and equitable society.
+                </p>
+              </div>
+            </div>
+          </div>
+      </section>
+      <section id="about" class="bg-slate-50 py-20 bg-gray-50">
+        <div class="container bg-slate-50 mx-auto px-6">
+          <div class="bg-slate-50 grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative h-[400px] rounded-lg bg-slate-50 overflow-hidden">
+              <img
+                src="https://public.readdy.ai/ai/img_res/ab2063a393eb733b373c1df73839595d.jpg"
+                class="absolute inset-0 w-full h-full object-cover"
+                alt="About Us"
+              />
+            </div>
+            <div>
+              <h2 class="text-4xl font-bold mb-6">Our Mission</h2>
+              <p class="text-gray-700 mb-6">
+                Our non charitable ngo offers various courses for underprivileged so they can make a better future. Courses include stitching, mehendi, beautician, drawing, basic computer and spoken english. After the completion of the course we provide the students with certificates and a job opportunity. 
+                Through this initiative our only intention is to reach maximum unprivileged and help them to get a better lifestyle and be a support to their family.
+              </p>
+              
+              <a
+                href="https://helpinghandsngo.co.in/"
+                class="inline-block bg-white border-2 border-primary text-primary px-6 py-3 !rounded-button font-semibold hover:bg-primary hover:text-white transition-all whitespace-nowrap" target="_blank"
+              >
+                Learn More About Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+       <!-- <div class="flex items-center justify-between"> -->
+        <div class="grid md:grid-cols-2 items-center">
+          <section id="adver" class="bg-yellow-50 py-20 px-10">
+            <div>
+              <h2 class="text-4xl font-bold mb-6 text-black">Our Vision</h2>
+              <p class="text-gray-700 mb-6">
+                Our vision is to create a world where every individual has access to basic needs, education, and opportunities for a better life. We strive to empower communities and uplift lives through sustainable initiatives.
+                We believe in the power of collective action and the impact of small contributions. Together, we can build a brighter future for those in need.</p>
+            <div class="video-container relative h-[400px] rounded-lg overflow-hidden">
+              <video autoplay loop muted class="absolute w-full h-full object-cover">
+                <source src="donate.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <h2 class="text-4xl font-bold text-white">Join Us in Making a Difference</h2>
+              </div>
+             </div><br><br>
+
+
+             <div class="text-black grid md:grid-cols-3 gap-10 items-center">
+              <div class="div1 animate-fadeInUp transition duration-700 ease-in-out delay-100 hover:scale-105 hover:shadow-xl p-4 rounded-2xl bg-green-100">
+                  <video autoplay loop muted class="rounded-2xl border-4 border-gray-200 shadow-md mb-4 w-full object-cover h-48">
+                    <source src="Philanthropy Day Video Template (Editable).mp4" type="video/mp4" />
+                class="rounded-2xl border-4 m-2border-gray-200 shadow-md mb-4 w-full object-cover h-48">
+  
+              </div>
+              <div class="div2 animate-fadeInUp transition duration-700 ease-in-out delay-200 hover:scale-105 hover:shadow-xl p-4 rounded-2xl bg-yellow-200">
+                <video autoplay loop muted class="rounded-2xl border-4 border-gray-200 shadow-md mb-4 w-full object-cover h-48">
+                  <source src="Video Template - Social Fundraising Ad.mp4" type="video/mp4" />
+                  </DIV>
+              <div class="div3 animate-fadeInUp transition duration-700 ease-in-out delay-300 hover:scale-105 hover:shadow-xl p-4 rounded-2xl bg-red-400">
+                <video autoplay loop muted class="rounded-2xl border-4 border-gray-200 shadow-md mb-4 w-full object-cover h-48">
+                  <source src="VN20250421_100621 (2).mp4" type="video/mp4" />
+              </div>
+            </div>
+
+
+          </section>
+          
+          <!-- <section id="donate" class="py-28 bg-emerald-50">
+        <div class="container mx-auto ">
+          <h2 class="text-3xl font-bold text-center mb-12">Make a Donation</h2>
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-slate-50 rounded-lg shadow-lg p-8">
+              <div class="space-y-8">
+                <div class="flex flex-col items-center mb-8">
+                  <div class="text-2xl font-bold text-gray-700 mb-4">
+                    Choose Your Impact
+                  </div>
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    
+                    <div class="donation-option group cursor-pointer w-[280px] bg-slate-50  rounded-lg shadow-md hover:shadow-lg transition-all p-6 border-2 border-transparent hover:border-emerald-700" data-amount="500">
+                      <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl font-bold text-primary">₹500</span>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          <i class="ri-heart-line text-primary group-hover:hidden"></i>
+                          <i class="ri-heart-fill text-primary hidden group-hover:block"></i>
+                        </div>
+                      </div>
+                      <h3 class="font-semibold mb-2">Feed a Family</h3>
+                      <p class="text-sm text-gray-600">Provide nutritious meals for a family of four for one week</p>
+                    </div>
+                    <div class="donation-option group cursor-pointer w-[280px] bg-slate-50  rounded-lg shadow-md hover:shadow-lg transition-all p-6 border-2 border-transparent hover:border-primary" data-amount="1000">
+                      <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl font-bold text-primary">₹1,000</span>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          <i class="ri-book-line text-primary group-hover:hidden"></i>
+                          <i class="ri-book-fill text-primary hidden group-hover:block"></i>
+                        </div>
+                      </div>
+                      <h3 class="font-semibold mb-2">Support Education</h3>
+                      <p class="text-sm text-gray-600">Provide school supplies and books for two children</p>
+                    </div>
+                    <div class="donation-option group cursor-pointer w-[280px] bg-slate-50 rounded-lg shadow-md hover:shadow-lg transition-all p-6 border-2 border-transparent hover:border-primary" data-amount="2000">
+                      <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl font-bold text-primary">₹2,000</span>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          <i class="ri-first-aid-kit-line text-primary group-hover:hidden"></i>
+                          <i class="ri-first-aid-kit-fill text-primary hidden group-hover:block"></i>
+                        </div>
+                      </div>
+                      <h3 class="font-semibold mb-2">Healthcare Support</h3>
+                      <p class="text-sm text-gray-600">Fund medical checkups for 5 elderly people</p>
+                    </div>
+                    <div class="donation-option group cursor-pointer w-[280px] bg-slate-50 rounded-lg shadow-md hover:shadow-lg transition-all p-6 border-2 border-transparent hover:border-primary" data-amount="5000">
+                      <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl font-bold text-primary">₹5,000</span>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          <i class="ri-home-line text-primary group-hover:hidden"></i>
+                          <i class="ri-home-fill text-primary hidden group-hover:block"></i>
+                        </div>
+                      </div>
+                      <h3 class="font-semibold mb-2">Shelter Program</h3>
+                      <p class="text-sm text-gray-600">Contribute to building homes for homeless families</p>
+                    </div>
+                  </div>
+                </div>
+      
+              
+                <div class="max-w-md mx-auto">
+                  <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Custom Amount (₹)</label>
+                    <div class="relative">
+                      <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">₹</span>
+                      <input type="text" id="customAmount" class="w-full pl-8 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-500 focus:outline-none text-lg" placeholder="Enter your amount" />
+                    </div>
+                    <div class="text-sm text-gray-500 mt-2">* Minimum donation amount is ₹100</div>
+                  </div>
+      
+                  <button id="generateQR" class="w-full bg-primary text-white py-4 !rounded-button font-semibold hover:bg-opacity-90 transition-all mb-2 whitespace-nowrap flex items-center justify-center">
+                    <i class="ri-qr-code-line mr-2"></i>Generate QR Code
+                  </button>
+                  <p class="text-center text-sm text-gray-500">Secure payment powered by UPI</p>
+                </div>
+      
+                
+                <div id="qrCodeContainer" class="hidden">
+                  <div class="border-2 border-gray-200 rounded-lg p-6 text-center">
+                    <div id="qrCode" class="w-48 h-48 mx-auto mb-4"></div>
+                    <p class="text-gray-700 mb-4">Scan this QR code to make your donation</p>
+                    <button id="saveQR" class="	bg-amber-500 text-white px-6 py-2 !rounded-button font-semibold hover:bg-amber-600 hover:bg-opacity-90 transition-all whitespace-nowrap">Save QR Code</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <section id="donate" class="py-20 bg-green-50">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-12">Make a Donation</h2>
+          <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <div class="space-y-8">
+                <div class="flex flex-col items-center mb-8">
+                  <div class="text-2xl font-bold text-gray-800 mb-4">
+                    Choose Your Impact
+                  </div>
+                  <div class="flex flex-wrap gap-4 justify-center">
+                    <!-- Donation Options -->
+                    <div class="donation-option group cursor-pointer w-[280px] bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6 border-2 border-transparent hover:border-primary" data-amount="500">
+                      <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl font-bold text-primary">₹500</span>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          <i class="ri-heart-line text-primary group-hover:hidden"></i>
+                          <i class="ri-heart-fill text-primary hidden group-hover:block"></i>
+                        </div>
+                      </div>
+                      <h3 class="font-semibold mb-2">Feed a Family</h3>
+                      <p class="text-sm text-gray-600">Provide nutritious meals for a family of four for one week</p>
+                    </div>
+                    <div class="donation-option group cursor-pointer w-[280px] bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6 border-2 border-transparent hover:border-primary" data-amount="1000">
+                      <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl font-bold text-primary">₹1,000</span>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          <i class="ri-book-line text-primary group-hover:hidden"></i>
+                          <i class="ri-book-fill text-primary hidden group-hover:block"></i>
+                        </div>
+                      </div>
+                      <h3 class="font-semibold mb-2">Support Education</h3>
+                      <p class="text-sm text-gray-600">Provide school supplies and books for two children</p>
+                    </div>
+                    <div class="donation-option group cursor-pointer w-[280px] bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6 border-2 border-transparent hover:border-primary" data-amount="2000">
+                      <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl font-bold text-primary">₹2,000</span>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          <i class="ri-first-aid-kit-line text-primary group-hover:hidden"></i>
+                          <i class="ri-first-aid-kit-fill text-primary hidden group-hover:block"></i>
+                        </div>
+                      </div>
+                      <h3 class="font-semibold mb-2">Healthcare Support</h3>
+                      <p class="text-sm text-gray-600">Fund medical checkups for 5 elderly people</p>
+                    </div>
+                    <div class="donation-option group cursor-pointer w-[280px] bg-white rounded-lg shadow-md hover:shadow-lg transition-all p-6 border-2 border-transparent hover:border-primary" data-amount="5000">
+                      <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl font-bold text-primary">₹5,000</span>
+                        <div class="w-8 h-8 flex items-center justify-center">
+                          <i class="ri-home-line text-primary group-hover:hidden"></i>
+                          <i class="ri-home-fill text-primary hidden group-hover:block"></i>
+                        </div>
+                      </div>
+                      <h3 class="font-semibold mb-2">Shelter Program</h3>
+                      <p class="text-sm text-gray-600">Contribute to building homes for homeless families</p>
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- Custom Amount and QR Button -->
+                <div class="max-w-md mx-auto">
+                  <div class="mb-6">
+                    <label class="block text-gray-700 mb-2">Custom Amount (₹)</label>
+                    <div class="relative">
+                      <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">₹</span>
+                      <input type="text" id="customAmount" class="w-full pl-8 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-lg" placeholder="Enter your amount" />
+                    </div>
+                    <div class="text-sm text-gray-500 mt-2">* Minimum donation amount is ₹100</div>
+                  </div>
+      
+                  <button id="generateQR" class="w-full bg-primary text-white py-4 !rounded-button font-semibold hover:bg-opacity-90 transition-all mb-2 whitespace-nowrap flex items-center justify-center">
+                    <i class="ri-qr-code-line mr-2"></i>Generate QR Code
+                  </button>
+                  <p class="text-center text-sm text-gray-500">Secure payment powered by UPI</p>
+                </div>
+      
+                <!-- QR Code Display -->
+                <div id="qrCodeContainer" class="hidden">
+                  <div class="border-2 border-gray-200 rounded-lg p-6 text-center">
+                    <div id="qrCode" class="w-48 h-48 mx-auto mb-4"></div>
+                    <p class="text-gray-600 mb-4">Scan this QR code to make your donation</p>
+                    <p class="text-gray-600 mb-2">Or click the "Make Payment" button to pay through any UPI app</p>
+                
+                    <!-- Flex container for buttons -->
+                    <div class="flex flex-wrap justify-center items-center gap-4 mt-4">
+                      <a id="upiLink"
+                         href="upi://pay?pa=helpinghands8785@sbi&pn=Helping Hands&am=5000&cu=INR"
+                         target="_blank"
+                         class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-all text-center">
+                         Make Payment
+                      </a>
+                
+                      <button id="saveQR"
+                              class="bg-secondary text-white px-6 py-2 rounded font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap">
+                         Save QR Code
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+      <section id="photos" class="bg-[#1D3557] py-20">
+        <div class="container mx-auto px-6">
+          <!-- <h2 class="text-3xl text-white font-bold text-center mb-4">Photo Gallery</h2> -->
+          <h2 class="text-5xl font-extrabold text-white bg-clip-text text-center mb-10 shadow-lg">
+            Photo Gallery
+        </h2>
+          <p class="text-white text-center mb-12 max-w-2xl mx-auto">
+            Capturing moments of hope, transformation and community impact
+            through our lens.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid gap-8">
+              <div class="relative group overflow-hidden rounded-lg h-[400px]">
+                <img
+                  src="child.webp"
+                  alt="Education"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+                >
+                  <div>
+                    <p class="text-white text-lg font-semibold mb-2">
+                      Education Programs
+                    </p>
+                    <p class="text-white/80 text-sm">
+                      Empowering children through quality education and modern
+                      learning facilities
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="relative group overflow-hidden rounded-lg h-[280px]">
+                <img
+                  src="health.webp"
+                  alt="Healthcare"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+                >
+                  <div>
+                    <p class="text-white text-lg font-semibold mb-2">
+                      Healthcare Services
+                    </p>
+                    <p class="text-white/80 text-sm">
+                      Providing accessible healthcare services to rural
+                      communities
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid gap-8">
+              <div class="relative group overflow-hidden rounded-lg h-[280px]">
+                <img
+                  src="women.avif"
+                  alt="Women Empowerment"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+                >
+                  <div>
+                    <p class="text-white text-lg font-semibold mb-2">
+                      Women Empowerment
+                    </p>
+                    <p class="text-white/80 text-sm">
+                      Supporting women entrepreneurs through skill development
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="relative group overflow-hidden rounded-lg h-[400px]">
+                <img
+                  src="sport.jpg"
+                  alt="Sustainable Agriculture"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+                >
+                  <div>
+                    <p class="text-white text-lg font-semibold mb-2">
+                      sports
+                    </p>
+                    <p class="text-white/80 text-sm">
+                      Promoting sustainable farming practices for better yields
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid gap-8">
+              <div class="relative group overflow-hidden rounded-lg h-[400px]">
+                <img
+                  src="community.webp"
+                  alt="Community Development"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+                >
+                  <div>
+                    <p class="text-white text-lg font-semibold mb-2">
+                      Community Development
+                    </p>
+                    <p class="text-white/80 text-sm">
+                      Building stronger communities through infrastructure
+                      projects
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="relative group overflow-hidden rounded-lg h-[280px]">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/d94c4183918e31760254a0797b2b5c78.jpg"
+                  alt="Clean Water"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+                >
+                  <div>
+                    <p class="text-white text-lg font-semibold mb-2">
+                      Clean Water Initiative
+                    </p>
+                    <p class="text-white/80 text-sm">
+                      Ensuring access to clean and safe drinking water
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12 text-center">
+            <button
+              class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap inline-flex items-center"
+            >
+            <a href="Gallery.html">View Full Gallery</a>
+
+              <i class="ri-arrow-right-line ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="impact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl font-extrabold text-center mb-4">Impact Stories</h2> 
+          <p class="text-[#2D3748] text-center mb-12 max-w-2xl mx-auto">
+            Real stories from the people whose lives have been transformed
+            through our initiatives and your generous support.
+          </p>
+          <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="impact.jpg"
+                class="w-full h-48 object-cover"
+                alt="Education Impact"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-4">
+                  Education Initiative Impact
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Our education programs have helped over 1000 children access
+                  quality education in 2018-2024. Through modern facilities and
+                  dedicated teachers, we've seen a 40% improvement in academic
+                  performance.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <img
+                        src="meera mam.png"
+                        class="w-full h-full object-cover"
+                        alt="Testimonial"
+                      />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold">Meera mam</h4>
+                      <p class="text-gray-500 text-sm">Teacher</p>
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="text-primary hover:text-opacity-80 flex items-center"
+                  >
+                    
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="https://public.readdy.ai/ai/img_res/8f62dfa0525bb4a524c557f6caa4a24e.jpg"
+                class="w-full h-48 object-cover"
+                alt="Healthcare Impact"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-4">
+                  Healthcare Program Success
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  In 2024, our mobile health clinics served 1,100+ patients
+                  across 10 villages. We've reduced preventable diseases by 60%
+                  through regular health camps and awareness programs.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                      <img
+                        src="docter.png"
+                        class="w-full h-full object-cover"
+                        alt="Testimonial"
+                      />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold">Dr. Kumari</h4>
+                      <p class="text-gray-500 text-sm">Junior Doctor</p>
+                    </div>
+                  </div>
+                  <a
+                    href="#"
+                    class="text-primary hover:text-opacity-80 flex items-center"
+                  >
+                   
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#FAF3E0] rounded-lg text-center shadow-lg p-8">
+            <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-800">
+              Community Testimonials
+            <span class="block w-24 h-1 bg-primary mx-auto mt-2 rounded-full"></span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Testimonial Card -->
+              <div class="testimonial-card text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 border-t-4 border-primary">
+                <div class="relative mb-4">
+                  <img src="Lakshmi Devi.png" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-primary hover:scale-110 transition-transform duration-300" />
+                  <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-full text-sm">Education</div>
+                </div>
+                <p class="text-gray-600 mb-4 italic">"The Helping Hand has changed my life. At 45, I can now read and write, helping me manage my small business better and support my children's education."</p>
+                <h4 class="text-xl font-semibold text-gray-800 hover:text-primary transition-colors">Lakshmi Devi</h4>
+                <p class="text-sm text-gray-500">Small Business Owner</p>
+              </div>
+              <div class="testimonial-card text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 border-t-4 border-primary">
+                <div class="relative mb-4">
+                  <img src="agri.jpg" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-primary hover:scale-110 transition-transform duration-300" />
+                  <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-full text-sm">Agriculture</div>
+                </div>
+                <p class="text-gray-600 mb-4 italic">"The sustainable farming training has doubled my crop yield. The organic farming techniques have not only increased my income but also improved soil health."
+                </p>
+                <h4 class="text-xl font-semibold text-gray-800 hover:text-primary transition-colors">Ramesh Singh</h4>
+                <p class="text-sm text-gray-500">Organic Farmer</p>
+              </div>
+              <div class="testimonial-card text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 border-t-4 border-primary">
+                <div class="relative mb-4">
+                  <img src="girl.jpg" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-primary hover:scale-110 transition-transform duration-300" />
+                  <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-primary text-white px-3 py-1 rounded-full text-sm">Women Empowerment</div>
+                </div>
+                <p class="text-gray-600 mb-4 italic">"The women's entrepreneurship program gave me the skills and confidence to start my own business. Today, I employ 5 other women from my community."</p>
+                <h4 class="text-xl font-semibold text-gray-800 hover:text-primary transition-colors">Priya Malhotra</h4>
+                <p class="text-sm text-gray-500">Entrepreneur</p>
+              </div>
+          
+              <!-- Repeat for other testimonials, just like above -->
+            </div>
+          </div>
+          <div class="mt-16 text-center">
+            <a
+              href="https://helpinghandsngo.co.in/programs"
+              class="inline-flex items-center bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap" target="_blank"
+            >
+              View All Impact Stories
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <form action="https://formspree.io/f/xqapnlko"
+        method="POST">                 
+                    <input type="hidden" name="access_key" value="2ecbbcba-0273-4f47-a019-1a2dd1f39ce1" />
+                  
+          <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+              <!-- Contact Form -->
+              <div class="border-2 border-grey-200 rounded-lg p-8 shadow-lg">
+                <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+                <div class="space-y-6">
+                  <div>
+                    <label class="block text-gray-700 mb-2">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Enter your Name"
+                      class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-primary focus:outline-none"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 mb-2">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Enter your Email"
+                      class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-primary focus:outline-none"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 mb-2">Message</label>
+                    <textarea
+                      name="message"
+                      placeholder="Enter your message"
+                      class="w-full px-4 py-3 border-2 border-gray-200 rounded focus:border-primary focus:outline-none"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                  type="submit"
+                  class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary transition-all w-full"
+                >
+                  Send Message
+                </button>
+                </div>
+              </div>
+      
+              <!-- Contact Info & Map -->
+              <div>
+                <div class="bg-white border-2 border-grey-200   rounded-lg shadow-lg p-8 mb-8">
+                  <h3 class="text-xl font-semibold mb-6">Get in Touch</h3>
+                  <div class="space-y-4">
+                    <div class="flex items-start">
+                      <div class="w-10 h-10 flex items-center justify-center text-primary">
+                        <i class="ri-map-pin-line ri-lg"></i>
+                      </div>
+                      <div class="ml-4">
+                        <h4 class="font-semibold">Address</h4>
+                        <p class="text-gray-600">
+                          7A Mahendra Roy Lane Post Office:, Gobinda Khatick Rd, Police Station:, Topsia, Kolkata, West Bengal 700046
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-10 h-10 flex items-center justify-center text-primary">
+                        <i class="ri-mail-line ri-lg"></i>
+                      </div>
+                      <div class="ml-4">
+                        <h4 class="font-semibold">Email</h4>
+                        <p class="text-gray-600">bob1977singh@gmail.com</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-10 h-10 flex items-center justify-center text-primary">
+                        <i class="ri-phone-line ri-lg"></i>
+                      </div>
+                      <div class="ml-4">
+                        <h4 class="font-semibold">Phone</h4>
+                        <p class="text-gray-600">+91 9038334810</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-10 h-10 flex items-center justify-center text-primary">
+                        <i class="ri-time-line ri-lg"></i>
+                      </div>
+                      <div class="ml-4">
+                        <h4 class="font-semibold">Office Hours</h4>
+                        <p class="text-gray-600">Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="h-64 rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.0459766001247!2d88.38025961492947!3d22.542555985197716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277e27db50691%3A0xcfb17f30da50c04c!2sHelping%20Hands!5e0!3m2!1sen!2sin!4v1645771234567!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full h-full"
+                  ></iframe>
+                </div>
+              <!-- </div> -->
+            </div>
+          <!-- </div> -->
+        </form>
+      </section>
+      </main>
+      <section class="flex justify-center items-center min-h-screenbg-cover py-20 ">
+        <div class=" item-center justify-center bg-blue-200 p-6 rounded-2xl shadow-xl w-full max-w-xl">
+          <div class= "flex flex-col items-center">
+            <div
+                class="w-25 h-25 mr-3 bg-white rounded-full flex items-center justify-center">
+                <span class="text-xl font-['Pacifico'] text-primary"><img style="border-radius: 100%;" src="logo.jpeg" alt=""></span>
+              </div>
+            <h1 class="text-3xl font-bold mb-4">Feedback Form</h1>
+            <p class="text-gray-600 mb-6 text-center">We value your feedback! Please share your thoughts with us.</p>
+            <!-- <div class="bg-white p-8 rounded-lg shadow-lg w-full"> -->
+              <button onclick="openModal()" class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition">
+      Give Feedback
+    </button>
+  
+      <!-- Feedback Modal -->
+      <div id="feedbackModal" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg relative bg-gradient-to-r from-blue-100 to-blue-200">
+    
+      
+          <button onclick="closeModal()" class="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+          
+          <h2 class="text-2xl font-bold text-center mb-6">We Value Your Feedback!</h2>
+          <form action="https://formspree.io/f/xqapnlko"
+          method="POST" >                 
+                      <input type="hidden" name="access_key" value="2ecbbcba-0273-4f47-a019-1a2dd1f39ce1" />
+                    
+  <!-- User Name -->
+  <div>
+    <label class="block text-sm font-medium mb-1" for="name">Name</label>
+    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required />
+  </div>
+
+  <!-- User Email -->
+  <div>
+    <label class="block text-sm font-medium mb-1" for="email">Email</label>
+    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required />
+  </div>
+
+  <!-- Emoji Rating -->
+  <div>
+    <label class="block text-sm font-medium mb-2">Rate your experience:</label>
+    <div class="flex justify-between text-3xl gap-4" id="emojiRating">
+      <span data-value="😡" class="cursor-pointer hover:scale-110 transition-transform p-2 rounded-full">😡</span>
+      <span data-value="😐" class="cursor-pointer hover:scale-110 transition-transform p-2 rounded-full">😐</span>
+      <span data-value="😊" class="cursor-pointer hover:scale-110 transition-transform p-2 rounded-full">😊</span>
+      <span data-value="😍" class="cursor-pointer hover:scale-110 transition-transform p-2 rounded-full">😍</span>
+    </div>
+    <input type="hidden" name="rating" id="rating" required />
+  </div>
+
+  <!-- Comments -->
+  <div>
+    <label class="block text-sm font-medium mb-1" for="comments">Comments</label>
+    <textarea id="comments" name="comments" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required></textarea>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg">
+    Submit Feedback
+  </button>
+</form>
+
+<!-- Scripts -->
+<script>
+  function openModal() {
+    document.getElementById("feedbackModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("feedbackModal").classList.add("hidden");
+  }
+
+  // Emoji rating logic
+  const emojiRating = document.getElementById('emojiRating');
+  const ratingInput = document.getElementById('rating');
+
+  emojiRating.querySelectorAll('span').forEach(emoji => {
+    emoji.addEventListener('click', () => {
+      ratingInput.value = emoji.dataset.value;
+      // Reset styles
+      emojiRating.querySelectorAll('span').forEach(e => {
+        e.classList.remove('scale-100', 'border-2', 'border-blue-500');
+      });
+      // Highlight selected emoji
+      emoji.classList.add('scale-100', 'border-2', 'border-blue-500');
+    });
+  });
+
+  // Optional success alert
+  document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+    setTimeout(() => {
+      alert("Thanks for your feedback!");
+      closeModal();
+      this.reset();
+      // remove emoji highlight
+      emojiRating.querySelectorAll('span').forEach(e => {
+        e.classList.remove('scale-100', 'border-2', 'border-blue-500');
+      });
+    }, 2000);
+  });
+</script>
+
+      
+    
+  </div>
+  </section>
+    <!--footer-->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-50 pl-20">
+          <div>
+            <div class="flex items-center mb-4">
+              <div
+                class="w-15 h-15 mr-3 bg-white rounded-full flex items-center justify-center">
+                <span class="text-xl font-['Pacifico'] text-primary"><img style="border-radius: 100%;" src="logo.jpeg" alt=""></span>
+              </div>
+              <span class="text-xl font-bold">Helping Hands</span>
+            </div>
+            <p class="font-semibold text-xl ">"Together, we build a bridge from need to hope!"</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-6 ml-20">Quick Links</h3>
+            <ul class="space-y-3 ml-20">
+              <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+              <li><a href="#about" class="hover:text-blue-500">About Us</a></li>
+              <li><a href="#donate" class="hover:text-blue-500">Donate</a></li>
+              <li><a href="#photos" class="hover:text-blue-500">Gallery</a></li>
+              <li>
+                <a href="#impact" class="hover:text-blue-500">Impact Stories</a>
+              </li>
+              <li><a href="#contact" class="hover:text-blue-500">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Stay updated with our latest news and updates.
+            </p>
+            <form 
+            action="https://api.web3forms.com/submit" 
+            method="POST" 
+            id="newsletterForm" 
+            class="space-y-4"
+          >
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="57bf578f-32b0-409e-af8b-a7242d6fdbc9" />
+          
+            <!-- Gmail-only Email Input -->
+            <input
+              type="email"
+              name="email"
+              pattern="[a-zA-Z0-9._%+-]+@gmail\.com$"
+              class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded focus:border-primary focus:outline-none"
+              placeholder="Enter your email address"
+              required
+            />
+          
+            <!-- Honeypot to prevent spam -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+          
+            <button
+              type="submit"
+              class="bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-6 ml-20">Connect With Us</h3>
+            <div class="flex space-x-4 ml-20">
+              <a
+                href="https://www.facebook.com/helpinghandsngo/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-blue-700 transition-all"
+              >
+                <i class="ri-facebook-fill ri-lg"></i>
+              </a>
+              <a
+                href="https://x.com/bobsingh1977"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-all"
+              >
+                <i class="ri-twitter-fill ri-lg"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/helpinghand9943/"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-pink-400 transition-all"
+              >
+                <i class="ri-instagram-fill ri-lg"></i>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400">
+            &copy; 2025 Helping Hands. All rights reserved.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="text-gray-400 hover:text-primary"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-gray-400 hover:text-primary"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+      // Function to show notification
+    // Add this function to your existing script
+function submitForm(form, actionUrl) {
+    // Prevent default form submission
+    event.preventDefault();
+    
+    // Create FormData object from the form
+    const formData = new FormData(form);
+    
+    // Show loading state
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Processing...';
+    submitBtn.disabled = true;
+
+    // Send AJAX request
+    fetch(actionUrl, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+    })
+    .then(data => {
+        if(data.status === 'success') {
+            showToast(data.message, 'success');
+            form.reset();
+        } else {
+            showToast(data.message, 'error');
+        }
+    })
+    .catch(error => {
+        showToast('An error occurred. Please try again.', 'error');
+        console.error('Error:', error);
+    })
+    .finally(() => {
+        // Reset button state
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+    });
+    
+    return false;
+}
+
+// Make sure you have this toast notification function (add if missing)
+function showToast(message, type = "success") {
+    const toast = document.createElement("div");
+    toast.className = `fixed top-4 right-4 px-6 py-3 rounded shadow-lg z-50 ${
+        type === "success" ? "bg-green-500" : "bg-red-500"
+    } text-white transform transition-all duration-300 translate-y-[-100%]`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    // Animate in
+    setTimeout(() => {
+        toast.style.transform = "translateY(0)";
+    }, 10);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        toast.style.transform = "translateY(-100%)";
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const amountBtns = document.querySelectorAll(".amount-btn");
+        const customAmount = document.getElementById("customAmount");
+        const generateQRBtn = document.getElementById("generateQR");
+        const qrCodeContainer = document.getElementById("qrCodeContainer");
+        const qrCodeElement = document.getElementById("qrCode");
+        const saveQRBtn = document.getElementById("saveQR");
+        const contactForm = document.getElementById("contactForm");
+        const newsletterForm = document.getElementById("newsletterForm");
+        const testimonialSlider = document.getElementById("testimonialSlider");
+        const prevSlideBtn = document.getElementById("prevSlide");
+        const nextSlideBtn = document.getElementById("nextSlide");
+        let currentSlide = 0;
+        const totalSlides = 3;
+        let qrCode = null;
+        // Add click event listeners to all buttons
+        document.querySelectorAll("button").forEach((button) => {
+          button.addEventListener("click", function (e) {
+            // Add ripple effect
+            const ripple = document.createElement("div");
+            ripple.classList.add("ripple");
+            this.appendChild(ripple);
+            // Get button position
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            ripple.style.left = x + "px";
+            ripple.style.top = y + "px";
+            // Remove ripple after animation
+            setTimeout(() => ripple.remove(), 600);
+            // Add active state
+            this.classList.add("active");
+            setTimeout(() => this.classList.remove("active"), 200);
+          });
+        });
+        // Add hover effect to all buttons
+        document.querySelectorAll("button").forEach((button) => {
+          button.addEventListener("mouseenter", function () {
+            this.style.transform = "scale(1.05)";
+            this.style.transition = "transform 0.2s ease";
+          });
+          button.addEventListener("mouseleave", function () {
+            this.style.transform = "scale(1)";
+          });
+        });
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+        // Handle donation option selection
+        document.querySelectorAll(".donation-option").forEach((option) => {
+          option.addEventListener("click", () => {
+            // Remove selected state from all options
+            document.querySelectorAll(".donation-option").forEach((opt) => {
+              opt.classList.remove("border-primary");
+            });
+            // Add selected state to clicked option
+            option.classList.add("border-primary");
+            // Update custom amount input
+            customAmount.value = option.dataset.amount;
+            // Smooth scroll to custom amount section
+            customAmount.scrollIntoView({ behavior: "smooth", block: "center" });
+          });
+        });
+        // Handle frequency selection
+        document.querySelectorAll(".frequency-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // Remove selected state from all frequency buttons
+            document.querySelectorAll(".frequency-btn").forEach((b) => {
+              b.classList.remove("border-primary", "text-primary");
+            });
+            // Add selected state to clicked button
+            btn.classList.add("border-primary", "text-primary");
+          });
+        });
+        // Validate custom amount input
+        customAmount.addEventListener("input", (e) => {
+  // Get raw numeric value
+  let value = e.target.value.replace(/[^0-9]/g, "");
+  
+  if (value) {
+    const numericValue = parseInt(value);
+    if (numericValue < 100) {
+      showToast("Minimum donation amount is ₹100", "error");
+      generateQRBtn.disabled = true;
+      generateQRBtn.classList.add("opacity-50");
+    } else {
+      generateQRBtn.disabled = false;
+      generateQRBtn.classList.remove("opacity-50");
+    }
+    
+    // Format display value
+    e.target.value = "₹" + numericValue.toLocaleString("en-IN");
+  } else {
+    e.target.value = "";
+  }
+});
+        generateQRBtn.addEventListener("click", () => {
+  // Get raw number value without currency symbol
+  const rawValue = customAmount.value.replace(/[^0-9]/g, "");
+  const amount = parseInt(rawValue);
+
+  if (!amount || amount < 100) {
+    showToast("Minimum donation amount is ₹100", "error");
+    return;
+  }
+
+  qrCodeContainer.classList.remove("hidden");
+  qrCodeElement.innerHTML = "";
+  qrCode = new QRCode(qrCodeElement, {
+    text: `upi://pay?pa=helpinghands8785@sbi&pn=Helping Hands&am=${amount}&cu=INR`,
+    width: 192,
+    height: 192,
+  });
+});
+        saveQRBtn.addEventListener("click", () => {
+          if (!qrCode) return;
+          const canvas = qrCodeElement.querySelector("canvas");
+          const image = canvas.toDataURL("image/png");
+          const link = document.createElement("a");
+          link.href = image;
+          link.download = "donation-qr.png";
+          link.click();
+        });
+        function showNotification(message, type = "success") {
+          showToast(message, type);
+        }
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          showNotification("Message sent successfully!");
+          contactForm.reset();
+        });
+        newsletterForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          showNotification("Successfully subscribed to newsletter!");
+          newsletterForm.reset();
+        });
+        function updateSlider() {
+          const offset = -currentSlide * 100;
+          testimonialSlider.querySelector(".testimonial-slider").style.transform =
+            `translateX(${offset}%)`;
+        }
+        prevSlideBtn.addEventListener("click", () => {
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+          updateSlider();
+        });
+        nextSlideBtn.addEventListener("click", () => {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateSlider();
+        });
+        // Remove auto slide
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              window.scrollTo({
+                top: target.offsetTop - 64,
+                behavior: "smooth",
+              });
+              if (mobileMenu.classList.contains("block")) {
+                mobileMenu.classList.remove("block");
+              }
+            }
+          });
+        });
+      });
+    </script>
+    <script src="js/main.js" defer></script>
+
+
+  </body>
+</html>
