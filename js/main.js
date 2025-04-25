@@ -75,7 +75,7 @@ function initDonationSystem() {
             return;
         }
 
-        const upiLink = `upi://pay?pa=helpinghands8785@sbi&pn=Helping Hands&am=${amount}&cu=INR`;
+        const upiLink = `upi://pay?pa=uditgoyal90532@okhdfcbank&pn=Udit Goyal&am=${amount}&cu=INR`;
 
         qrCodeElement.innerHTML = "";
         qrCodeContainer.classList.remove('hidden');
