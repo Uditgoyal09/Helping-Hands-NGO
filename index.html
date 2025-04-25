@@ -390,7 +390,7 @@
                     <!-- Flex container for buttons -->
                     <div class="flex flex-wrap justify-center items-center gap-4 mt-4">
                       <a id="upiLink"
-                         href="upi://pay?pa=uditgoyal90532@okhdfcbank&pn=Udit Goyal&am=5000&cu=INR"
+                         href="upi://pay?pa=uditgoyal90532@okhdfcbank&pn=Udit-Goyal&am=5000&cu=INR"
                          target="_blank"
                          class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-all text-center">
                          Make Payment
@@ -1196,7 +1196,7 @@ function showToast(message, type = "success") {
   qrCodeContainer.classList.remove("hidden");
   qrCodeElement.innerHTML = "";
   qrCode = new QRCode(qrCodeElement, {
-    text: `upi://pay?pa=uditgoyal90532@okhdfcbank&pn=Udit Goyal&am=${amount}&cu=INR`,
+    text: `upi://pay?pa=uditgoyal90532@okhdfcbank&pn=Udit-Goyal&am=${amount}&cu=INR`,
     width: 192,
     height: 192,
   });
