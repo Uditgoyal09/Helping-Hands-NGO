@@ -377,7 +377,7 @@ function showToast(message, type = "success") {
   qrCodeContainer.classList.remove("hidden");
   qrCodeElement.innerHTML = "";
   qrCode = new QRCode(qrCodeElement, {
-    text: `upi://pay?pa=8294881973@ibl&pn=Hope Foundation&am=${amount}&cu=INR`,
+    text: `upi://pay?pa=uditgoyal90532@okhdfcbank&pn=Udit Goyal&am=${amount}&cu=INR`,
     width: 192,
     height: 192,
   });
